@@ -2,7 +2,6 @@ import json
 import os
 
 def load_qa(path):
-    # Make path absolute based on project root
     project_root = os.path.dirname(os.path.dirname(__file__))  # backend/.. = project root
     abs_path = os.path.join(project_root, path)
 
