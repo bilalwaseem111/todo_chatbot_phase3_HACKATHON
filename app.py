@@ -1,12 +1,13 @@
 import streamlit as st
-from backend.bot import TodoChatBot
+from backend.bot import TodoChatBot  # backend import
 
-
+# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Hackathon Phase III | Todo AI Chatbot",
     layout="wide"
 )
 
+# ---------------- CUSTOM CSS ----------------
 st.markdown("""
 <style>
 html, body, [class*="css"] {
@@ -115,29 +116,25 @@ footer {
 </style>
 """, unsafe_allow_html=True)
 
-# ================= HERO =================
+# ---------------- HERO SECTION ----------------
 st.markdown("<div class='hero-title'>Hackathon Phase III</div>", unsafe_allow_html=True)
-st.markdown(
-    "<p class='hero-subtitle'>Todo AI Chatbot • MCP-inspired Stateless Conversational System</p>",
-    unsafe_allow_html=True
-)
+st.markdown("<p class='hero-subtitle'>Todo AI Chatbot • MCP-inspired Stateless Conversational System</p>", unsafe_allow_html=True)
 
 st.markdown(
     "<p style='text-align:center; max-width:900px; margin:auto; color:#cbd5f5;'>"
-    "<strong>Objective:</strong> Develop a stateless, AI-powered todo management chatbot that interprets natural language command task operations through an MCP inspired server architecture, leveraging Claude Code and Spec-Kit Plus."
+    "<strong>Objective:</strong> Build a stateless, AI-powered todo chatbot that interprets natural language commands using MCP-inspired architecture, Claude Code, and Spec-Kit Plus."
     "</p>",
     unsafe_allow_html=True
 )
 
-# ================= CARDS =================
+# ---------------- CARDS ----------------
 st.markdown("""
 <div class="card-grid">
 
 <div class="card">
 <h3>Objective</h3>
 <p>
-To build an AI-powered conversational interface that manages todo tasks using
-natural language commands, following a stateless request-response architecture.
+AI-powered conversational interface for managing todo tasks via natural language commands, following a stateless architecture.
 </p>
 </div>
 
@@ -164,7 +161,7 @@ natural language commands, following a stateless request-response architecture.
 </div>
 """, unsafe_allow_html=True)
 
-# ================= CHATBOT =================
+# ---------------- CHATBOT SECTION ----------------
 st.markdown("<div class='chat-section'>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align:center;'>Todo AI Chat Interface</h2>", unsafe_allow_html=True)
 
@@ -194,10 +191,10 @@ for sender, msg in st.session_state.chat:
 
 st.markdown("</div>", unsafe_allow_html=True)
 
-# ================= FOOTER =================
+# ---------------- FOOTER ----------------
 st.markdown("""
 <div class="footer">
     <p><strong>Hackathon Phase III – Todo AI Chatbot</strong></p>
-    Made by <strong>Bilal Waseem Roll Number (00471327)</strong></p>
+    Made by <strong>Bilal Waseem (00471327)</strong>
 </div>
 """, unsafe_allow_html=True)
