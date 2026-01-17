@@ -1,7 +1,5 @@
 import streamlit as st
-import sys
-sys.path.append("../backend")
-from bot import TodoChatBot
+from backend.bot import TodoChatBot
 
 st.set_page_config(
     page_title="Hackathon Phase III | Todo AI Chatbot",
