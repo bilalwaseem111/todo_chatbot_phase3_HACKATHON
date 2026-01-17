@@ -1,4 +1,4 @@
-from utils import load_qa, find_answer
+from backend.utils import load_qa, find_answer
 
 QA_PATH = "../data/qa.json"
 
