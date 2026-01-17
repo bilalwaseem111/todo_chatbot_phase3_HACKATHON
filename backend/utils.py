@@ -1,12 +1,15 @@
 import json
+import os
 
 def load_qa(path):
-    with open(path, "r", encoding="utf-8") as file:
+    # Convert relative path to absolute path
+    abs_path = os.path.join(os.path.dirname(__file__), "..", path)
+    with open(abs_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
-def find_answer(user_input, qa_list):
-    user_input = user_input.lower()
+def find_answer(question, qa_list):
+    question = question.lower()
     for item in qa_list:
-        if item["question"] in user_input:
+        if item["question"].lower() in question:
             return item["answer"]
-    return "Sorry, I don't understand that yet."
+    return "Sorry, I don't have an answer for that."
