@@ -2,8 +2,13 @@ import json
 import os
 
 def load_qa(path):
-    # Convert relative path to absolute path
-    abs_path = os.path.join(os.path.dirname(__file__), "..", path)
+    # Make path absolute based on project root
+    project_root = os.path.dirname(os.path.dirname(__file__))  # backend/.. = project root
+    abs_path = os.path.join(project_root, path)
+
+    if not os.path.exists(abs_path):
+        raise FileNotFoundError(f"QA file not found at {abs_path}")
+
     with open(abs_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
